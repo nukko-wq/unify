@@ -1,0 +1,14 @@
+{
+  "name": "unify",
+  "version": "1.0.0",
+  "description": "WordPress theme with Tailwind CSS v4",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/style.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "build:minify": "tailwindcss -i ./src/input.css -o ./css/style.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
+}
