@@ -1,0 +1,20 @@
+{
+  "name": "unify",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "homepage": "https://github.com/nukko-wq/wordpress_blank_theme#readme",
+  "bugs": {
+    "url": "https://github.com/nukko-wq/wordpress_blank_theme/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nukko-wq/wordpress_blank_theme.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
