@@ -13,8 +13,14 @@ This is "Unify", a WordPress theme based on Automattic's _s (Underscores) starte
 # Install dependencies
 npm install
 
-# Build Tailwind CSS (manual compilation)
-npx tailwindcss -i ./src/input.css -o ./css/style.css --watch
+# Build Tailwind CSS
+npm run build
+
+# Watch for changes during development
+npm run watch
+
+# Build minified CSS for production
+npm run build:minify
 ```
 
 ### PHP Development
@@ -48,8 +54,9 @@ composer make-pot
 ### CSS Architecture
 - Uses Tailwind CSS 4.1.10 with CLI compilation
 - Source file: `src/input.css` (contains only `@import "tailwindcss";`)
-- Output file: `css/style.css`
+- Output file: `css/style.css` (auto-generated, in .gitignore)
 - No Tailwind configuration file present (using defaults)
+- Tailwind classes being used in templates (e.g., `text-2xl font-bold` in header.php)
 
 ### PHP Architecture
 - Follows WordPress coding standards
@@ -94,11 +101,24 @@ Standard WordPress template files:
 - `search.php`: Search results template
 - `404.php`: Error page template
 
+## Development Workflow
+
+### Initial Setup
+1. Run `npm install` to install Tailwind CSS dependencies
+2. Run `composer install` to install PHP development tools
+3. Use `npm run watch` during development for automatic CSS compilation
+4. Run `npm run build` before committing changes
+
+### Git Configuration
+- `.gitignore` excludes build outputs (`css/style.css`), dependencies, and temporary files
+- Only commit source files (`src/input.css`, PHP templates, etc.)
+
 ## Key File Locations
 
 - Theme configuration: `functions.php`
 - CSS source: `src/input.css`
-- CSS output: `css/style.css`
+- CSS output: `css/style.css` (auto-generated)
+- Git ignore rules: `.gitignore`
 - PHP standards config: `phpcs.xml.dist`
 - Composer config: `composer.json`
 - Package config: `package.json`
